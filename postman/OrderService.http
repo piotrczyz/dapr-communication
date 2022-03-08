@@ -1,0 +1,42 @@
+@orderServiceDapr = http://localhost:3500
+@contributionServiceDapr = http://localhost:3501
+
+### 
+POST {{orderServiceDapr}}/v1.0/invoke/OrderService/method/order/deposit
+Accept: application/json
+dapr-app-id: OrderService
+Content-Type: application/json
+
+{
+    "orderId": "18",
+    "amount": 1400
+}
+
+### Get balance with application id in URL
+GET {{orderServiceDapr}}/v1.0/invoke/OrderService/method/order/balance/18
+Accept: application/json
+
+### Get balance with application id in header
+GET {{orderServiceDapr}}/order/balance/19
+Accept: application/json
+dapr-app-id: OrderService
+
+### Health check
+GET {{orderServiceDapr}}/Health
+Accept: application/json
+dapr-app-id: OrderService
+
+### Call OrderService method via ContributionService
+GET {{contributionServiceDapr}}/Health
+Accept: application/json
+dapr-app-id: OrderService
+
+### Check balance 
+GET  {{orderServiceDapr}}/v1.0/invoke/ContributionService/method/contribution/balance/17
+Accept: application/json
+dapr-app-id: ContributionService
+
+### Add Contribution
+POST  {{contributionServiceDapr}}/v1.0/invoke/ContributionService/method/contribution/add?orderId=17
+Accept: application/json
+dapr-app-id: OrderService

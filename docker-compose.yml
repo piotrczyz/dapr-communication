@@ -1,0 +1,29 @@
+version: '3'
+services:
+  orderservice:
+    build: OrderService
+#    ports:
+##      - "50001:50001" # Dapr instances communicate over gRPC so we need to expose the gRPC port
+#      - "5280:5280"
+#    depends_on:
+#      - redis
+#      - placement
+  orderservice-dapr:
+    image: "daprio/daprd:edge"
+    command: [
+      "./daprd",
+      "-app-id", "OrderService",
+      "-app-port", "5280",
+      "-placement-host-address", "placement:50006" # Dapr's placement service can be reach via the docker DNS entry
+    ]
+    volumes:
+      - "./components/:/components" # Mount our components folder for the runtime to use
+    depends_on:
+      - orderservice
+    network_mode: "service:orderservice" # Attach the nodeapp-dapr service to the nodeapp network namespace
+
+  placement:
+    image: "daprio/dapr"
+    command: ["./placement", "-port", "50006"]
+    ports:
+      - "50006:50006"
