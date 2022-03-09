@@ -35,7 +35,7 @@ jobs:
         with:
           push: true
           tags: daprimages.azurecr.io/order-service:${{ github.sha }}
-          context: src/OrderService/Dockerfile
+          context: ./src/OrderService/Dockerfile
 
 
   deploy:
