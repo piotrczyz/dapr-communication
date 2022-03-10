@@ -40,3 +40,7 @@ dapr-app-id: ContributionService
 POST  {{contributionServiceDapr}}/v1.0/invoke/ContributionService/method/contribution/add?orderId=17
 Accept: application/json
 dapr-app-id: OrderService
+
+
+SecretId a9265318-ebcd-48c0-b8ff-4a0474683d1e
+Value -cI7Q~IU9Lji5VyodYzT3hoye1Q35C8fa254N
