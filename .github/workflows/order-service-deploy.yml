@@ -71,7 +71,6 @@ jobs:
                 --registry-login-server daprimages.azurecr.io \
                 --registry-username  ${{ secrets.REGISTRY_USERNAME }} \
                 --registry-password ${{ secrets.REGISTRY_PASSWORD }} \
-                --ingress 'external' \
                 --min-replicas 1 \
                 --max-replicas 1 \
                 --enable-dapr \
@@ -86,7 +85,6 @@ jobs:
                 --registry-login-server daprimages.azurecr.io \
                 --registry-username  ${{ secrets.REGISTRY_USERNAME }} \
                 --registry-password ${{ secrets.REGISTRY_PASSWORD }} \
-                --ingress 'external' \
                 --min-replicas 1 \
                 --max-replicas 1 \
                 --enable-dapr \
