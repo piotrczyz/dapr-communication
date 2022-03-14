@@ -1,4 +1,4 @@
-name: Order Service
+name: Contribution Service
 
 on:
   push:
@@ -7,11 +7,11 @@ on:
   workflow_dispatch:      
 
 env:
-  APP_PATH: src/OrderService
-  APP_NAME: order-service
+  APP_PATH: src/ContributionService
+  APP_NAME: contribution-service
   RESOURCE_GROUP: DevOps-Playground
-  APP_PORT: 5280
-  DAPR_PORT: 3500
+  APP_PORT: 5127
+  DAPR_PORT: 3501
   COMPONENTS_PATH: components/statestore.yaml
 
 jobs:
@@ -92,7 +92,7 @@ jobs:
                 --min-replicas 1 \
                 --max-replicas 1 \
                 --enable-dapr \
-                --dapr-app-port ${{env.APP_PORT}} \
+                --dapr-app-port ${{env.DAPR_PORT}} \
                 --dapr-app-id ${{env.APP_NAME}} \
                 --dapr-components ${{env.COMPONENTS_PATH}} \
                 --debug
