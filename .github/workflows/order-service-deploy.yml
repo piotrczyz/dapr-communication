@@ -11,7 +11,7 @@ env:
   APP_NAME: order-service
   RESOURCE_GROUP: DevOps-Playground
   APP_PORT: 5280
-  COMPONENTS_PATH: components/orderstore.yaml
+  COMPONENTS_PATH: components/statestore.yaml
 
 jobs:
   build:
