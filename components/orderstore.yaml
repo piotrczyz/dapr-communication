@@ -6,9 +6,9 @@ spec:
   type: state.redis
   version: v1
   metadata:
-  - name: redisHost
-    value: localhost:6379
-  - name: redisPassword
-    value: ""
-  - name: actorStateStore
-    value: "true"
+    - name: redisHost
+      value: dapr-test-db.redis.cache.windows.net:6379
+    - name: redisPassword
+      value: "dk6wIMkbZOjQ7X6GOg0TAI2XXRS6WCHtXAzCaFQHJ9c="
+    - name: actorStateStore
+      value: "true"
