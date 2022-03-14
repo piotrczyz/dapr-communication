@@ -5,7 +5,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["ContributionService/ContributionService.csproj", "ContributionService/"]
+COPY ["ContributionService.csproj", "ContributionService/"]
 RUN dotnet restore "ContributionService/ContributionService.csproj"
 COPY . .
 WORKDIR "/src/ContributionService"

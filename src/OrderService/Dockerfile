@@ -6,10 +6,10 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 RUN dotnet --info
-COPY ["OrderService.csproj", "./"]
-RUN dotnet restore "OrderService.csproj"
+COPY ["OrderService.csproj", "OrderService/"]
+RUN dotnet restore "OrderService/OrderService.csproj"
 COPY . .
-WORKDIR /src
+WORKDIR /src/OrderService
 RUN dotnet build "OrderService.csproj" -c Release -o /app/build
 
 FROM build AS publish
