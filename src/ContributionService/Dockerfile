@@ -1,7 +1,6 @@
 ﻿FROM mcr.microsoft.com/dotnet/aspnet:6.0-bullseye-slim AS base
 WORKDIR /app
-ENV ASPNETCORE_URLS=http://+:5127
-ENV ASPNETCORE_ENVIRONMENT=Production
+ENV ASPNETCORE_ENVIRONMENT=Development
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0.101-bullseye-slim AS build
 WORKDIR /src

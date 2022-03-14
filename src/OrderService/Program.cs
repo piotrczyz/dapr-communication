@@ -23,7 +23,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 
 // app.UseCloudEvents();
 
@@ -31,4 +31,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run("http://*:5280");
+app.Run();
