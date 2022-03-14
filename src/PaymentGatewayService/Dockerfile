@@ -5,10 +5,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["PaymentGatewayService.csproj", "PaymentGatewayService/"]
-RUN dotnet restore "PaymentGatewayService/PaymentGatewayService.csproj"
+COPY ["PaymentGatewayService.csproj", "./"]
+RUN dotnet restore "PaymentGatewayService.csproj"
 COPY . .
-WORKDIR "/src/PaymentGatewayService"
+WORKDIR /src
 RUN dotnet build "PaymentGatewayService.csproj" -c Release -o /app/build
 
 FROM build AS publish
