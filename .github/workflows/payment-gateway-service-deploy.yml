@@ -9,6 +9,7 @@ on:
 env:
   APP_PATH: src/PaymentGatewayService
   APP_NAME: payment-service
+  APP_ENV_NAME: dapr-test-environment
   RESOURCE_GROUP: DevOps-Playground
   APP_PORT: 5094
   DAPR_PORT: 3502

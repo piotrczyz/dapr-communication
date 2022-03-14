@@ -9,6 +9,7 @@ on:
 env:
   APP_PATH: src/OrderService
   APP_NAME: order-service
+  APP_ENV_NAME: dapr-test-environment
   RESOURCE_GROUP: DevOps-Playground
   APP_PORT: 5280
   DAPR_PORT: 3500

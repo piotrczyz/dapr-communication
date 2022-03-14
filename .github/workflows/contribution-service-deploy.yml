@@ -9,6 +9,7 @@ on:
 env:
   APP_PATH: src/ContributionService
   APP_NAME: contribution-service
+  APP_ENV_NAME: dapr-test-environment
   RESOURCE_GROUP: DevOps-Playground
   APP_PORT: 5127
   DAPR_PORT: 3501
