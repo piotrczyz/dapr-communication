@@ -77,7 +77,7 @@ jobs:
                 --min-replicas 1 \
                 --max-replicas 1 \
                 --enable-dapr \
-                --dapr-app-port ${{env.APP_PORT}} \
+                --dapr-app-port ${{env.DAPR_PORT}} \
                 --dapr-app-id ${{env.APP_NAME}} \
                 --dapr-components ${{env.COMPONENTS_PATH}} \
                 --debug
