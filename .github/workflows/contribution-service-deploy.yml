@@ -6,6 +6,7 @@ on:
       [ main ]
     paths:
       - src/ContributionService/**
+      - .github/workflows/contribution-service-deploy.yml
   workflow_dispatch:      
 
 env:

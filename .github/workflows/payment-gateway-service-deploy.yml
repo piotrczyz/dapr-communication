@@ -6,6 +6,7 @@ on:
       [ main ]
     paths:
       - src/PaymentService/**
+      - .github/workflows/payment-gateway-service-deploy.yml
   workflow_dispatch:      
 
 env:

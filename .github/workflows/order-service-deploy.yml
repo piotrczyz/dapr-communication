@@ -6,6 +6,7 @@ on:
       [ main ]
     paths:
       - src/OrderService/**
+      - .github/workflows/order-service-deploy.yml
   workflow_dispatch:      
 
 env:
