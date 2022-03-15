@@ -39,7 +39,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: daprimages.azurecr.io/order-service:${{ github.sha }}
+          tags: daprimages.azurecr.io/${{env.APP_NAME}}:${{ github.sha }}
           context: ${{env.APP_PATH}}
           file: ${{env.APP_PATH}}/Dockerfile
 
